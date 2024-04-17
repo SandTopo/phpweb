@@ -1,0 +1,20 @@
+body{
+    
+  
+    
+    background-image: linear-gradient(to right, rgb(204,74,0), rgb(201,159,82));
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mierda{
+    
+    text-align: center;
+  
+}
+.titulo{
+    
+    text-align: center;
+}
+
