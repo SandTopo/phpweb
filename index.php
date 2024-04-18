@@ -2,26 +2,26 @@
 session_start();
 include "prueba.php";
 if (isset($_SESSION["user"])) {
-    header("Location: user.php");
+    header("Location: base.php");
     exit();
 }
-if (isset($_POST["email"])) {
+if (isset($_POST["name"])) {
 
     include("conexion.php");
-    $email = $_POST["email"];
+    $name = $_POST["name"];
     $password = $_POST["password"];
-    $sql = "select * from usuarios where email=? and password=?";
+    $sql = "select * from users where name=? and password=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(1,$email);
+    $stmt->bindParam(1,$name);
     $stmt->bindParam(2,$password);
     $stmt->execute();
     if ($stmt->rowCount()>0) {
-        $_SESSION["user"] = $email;
+        $_SESSION["user"] = $name;
         $_SESSION["datos"] = "otros datos";
         header("Location: user.php");
         exit();
     } else {
-        $error = "Email or password incorrect";
+        $error = "Nombre o contraseña incorrectos";
     }
 }
 ?>
@@ -43,19 +43,19 @@ if (isset($_POST["email"])) {
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                                            <span class="h1 fw-bold mb-0">Logo</span>
+                                            <span class="h1 fw-bold mb-0">Capítulos Dragon Ball</span>
                                         </div>
 
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                                         <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="email" name="email" id="form2Example17" class="form-control form-control-lg" />
-                                            <label class="form-label" for="form2Example17">Email address</label>
+                                            <input type="name" name="name" id="form2Example17" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form2Example17">Nombre</label>
                                         </div>
 
                                         <div data-mdb-input-init class="form-outline mb-4">
                                             <input type="password" name="password" id="form2Example27" class="form-control form-control-lg" />
-                                            <label class="form-label" for="form2Example27">Password</label>
+                                            <label class="form-label" for="form2Example27">Contraseña</label>
                                         </div>
 
                                         <div class="pt-1 mb-4">
@@ -67,10 +67,9 @@ if (isset($_POST["email"])) {
                                             ?>
                                         </div>
 
-                                        <a class="small text-muted" href="#!">Forgot password?</a>
-                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="register.php" style="color: #393f81;">Register here</a></p>
-                                        <a href="#!" class="small text-muted">Terms of use.</a>
-                                        <a href="#!" class="small text-muted">Privacy policy</a>
+                                        
+                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">No tienes cuenta? <a href="register.php" style="color: #393f81;">Regístrate</a></p>
+                                        
                                     </form>
 
                                 </div>

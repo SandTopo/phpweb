@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(1, $title);
             $stmt->bindParam(2, $publication);
             $stmt->bindParam(3, $synopsis);
-            $stmt->bindParam(6, $image);
+            $stmt->bindParam(4, $image);
 
             // Ejecutar la consulta
             try {
@@ -92,11 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMDB</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/deco.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <button onclick="window.location.href='user.php'">Go to Menu</button>
+    <button onclick="window.location.href='base.php'">Cancelar</button>
     <div class="container">
         <h1 class="mt-5 mb-4">Añade un nuevo capítulo</h1>
         <form action="" method="post" enctype="multipart/form-data">
@@ -106,11 +107,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="mb-3">
                 <label for="publication" class="form-label">Fecha de publicación</label>
-                <input type="date" class="form-control" id="publicacion" date="publicacion" required>
+                <input type="date" class="form-control" id="publicacion" name="publicacion" required>
             </div>
             <div class="mb-3">
                 <label for="synopsis" class="form-label">Sinopsis</label>
-                <textarea class="form-control" id="synopsis" name="synopsis" rows="3" required></textarea>
+                <textarea class="form-control" id="synopsis" name="synopsis"  required></textarea>
             </div>
 
             <div class="mb-3">
