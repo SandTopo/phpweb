@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <button onclick="window.location.href='base.php'">Cancelar</button>
+    <button onclick="window.location.href='base.php'">Salir</button>
     <div class="container">
         <h1 class="mt-5 mb-4">Añade un nuevo comentario</h1>
         <form action="" method="post" enctype="multipart/form-data">
