@@ -30,11 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Verificar si el archivo ya existe
-    if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
 
     // Verificar el tamaño de la imagen
     if ($_FILES["image"]["size"] > 500000) {
@@ -53,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar si $uploadOk está configurado en 0 por un error
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
+        echo "Tu archivo no se ha subido.";
         // Si todo está bien, intenta subir el archivo
     } else {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
@@ -71,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Ejecutar la consulta
             try {
                 $stmt->execute();
-                echo "Movie added successfully.";
+                echo "Capítulo añadido";
             } catch (PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
@@ -79,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Cerrar la conexión
             $conn = null;
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Hubo un error al subir el archivo.";
         }
     }
 }
