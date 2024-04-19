@@ -52,6 +52,12 @@ h4{
 .hoverino:hover{
     opacity: 1;
 }
+.azul:link{
+    color:white;
+}
+.azul:visited{
+    color:white;
+}
 .pop{
     height: 100vh;
     width: 100%;

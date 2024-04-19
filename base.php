@@ -75,10 +75,10 @@ $rowsChapter = $result->fetchAll(PDO::FETCH_ASSOC);
             ' . $row["synopsis"] . '
           </div>
           <div class="modal-footer">
-            <a href="addComent.php?idcoment=' . $row["id"] . '">Añadir comentario</a>
+            <a class="azul" href="addComent.php?idcoment=' . $row["id"] . '">Añadir comentario</a>
             <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
           </div>
-          <a href="coments.php?idcoment=' . $row["id"] . '">ver comentarios</a>
+          <a class="azul" href="coments.php?idcoment=' . $row["id"] . '">ver comentarios</a>
           <div class="container2">
 
           </div>
